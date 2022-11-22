@@ -15,9 +15,8 @@ struct SingleList
 /* khởi tạo giá trị cho Node đầu và Node cuối */
 void Initialize(SingleList& list)
 {
-    list.pHead = list.pTail = NULL;// khởi tạo giá trị cho Node đầu và Node cuối là Null
+    list.pHead = list.pTail = NULL;
 }
-
 /* Đếm số phần tử trong danh sách */
 int SizeOfList(SingleList list)
 {
@@ -34,13 +33,13 @@ int SizeOfList(SingleList list)
 /* tạo Node trong danh sách liên kết đơn */
 Node* CreateNode(int d)
 {
-    Node* pNode = new Node; //sử dụng pNode để tạo một Node mới
-    if (pNode != NULL) // Nếu pNode != Null, tức là pNode có giá trị thì
+    Node* pNode = new Node; 
+    if (pNode != NULL)
     {
-        pNode->data = d; // gán giá trị data cho d
-        pNode->pNext = NULL;// và cho con trỏ pNext trỏ tới giá trị Null
+        pNode->data = d; 
+        pNode->pNext = NULL;
     }
-    else // Nếu pNode == Null, tức là pNode không có giá trị thì xuất thông tin
+    else
     {
         cout << "Error allocated memory";
     }
@@ -76,7 +75,6 @@ void InsertLast(SingleList& list, int d)
         list.pTail = pNode;
     }
 }
-
 /* chèn node vào giữa danh sách */
 void InsertMid(SingleList& list, int pos, int d) {
     // Nếu pos < 0 hoặc pos lớn hơn kích thước của danh sách thì reuturn
@@ -106,7 +104,6 @@ void InsertMid(SingleList& list, int pos, int d) {
             pIns = pIns->pNext;
             i++;
         }
-        //sau khi tìm được thì thay đổi con trỏ pNext
         pPre->pNext = pNode;
         pNode->pNext = pIns;
     }
